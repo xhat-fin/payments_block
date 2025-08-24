@@ -8,6 +8,8 @@
 
 ## Структура базы данных
 
+
+
 ### Таблица `clients`
 | Поле              | Тип                 | Описание                        | Ограничения                     |
 | ----------------- | ------------------- | ------------------------------- | ------------------------------- |
@@ -16,12 +18,16 @@
 | status_block      | BOOLEAN             | Статус блокировки               | DEFAULT FALSE (не заблокирован) |
 | current_reason_id | INTEGER             | ID последней причины блокировки | FOREIGN KEY                     |
 
+
+
 ### Таблица `reason_blocks`
 | Поле         | Тип                 | Описание              | Ограничения                              |
 | ------------ | ------------------- | --------------------- | ---------------------------------------- |
 | id           | INTEGER PRIMARY KEY | ID причины блокировки | AUTOINCREMENT                            |
 | reason_title | TEXT                | Название причины      | NOT NULL                                 |
 | is_fraud     | BOOLEAN             | Признак мошенничества | DEFAULT FALSE (не мошенническая причина) |
+
+
 
 ### Таблица `log_blocks_payments`
 | Поле | Тип | Описание | Ограничения |
@@ -32,6 +38,8 @@
 | client_id | INTEGER | ID клиента | FOREIGN KEY, NOT NULL |
 | author_id | INTEGER | ID сотрудника | FOREIGN KEY, NOT NULL |
 | created_at | TIMESTAMP | Время операции | DEFAULT CURRENT_TIMESTAMP |
+
+
 
 ### Таблица `users`
 | Поле | Тип | Описание | Ограничения |
